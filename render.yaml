@@ -1,10 +1,23 @@
 services:
-- type: web
-  name: line-bot-python-flask
+# - type: web
+#   name: line-bot-python-flask
+#   env: python
+#   repo: https://github.com/line/line-bot-sdk-python.git
+#   buildCommand: cd examples/flask-echo;pip install gunicorn -r requirements.txt
+#   startCommand: cd examples/flask-echo;gunicorn app:app
+#   plan: free
+#   autoDeploy: false
+#   envVars:
+#   - key: 42oQAgkUxRddwO3bhFSDkFqDNqUTLN/HH+d+BVgfwsI+Dqfc+JpjNgkJ6VyPZl2xhjLZ4o8QkZxw1ckfYF6xTwA4zgFsniAPT3fEH26DgT8Re559X3U4QugahKCl1fsusr8T3zBSz591VLbox0i5OlGUYhWQfeY8sLGRXgo3xvw=
+#     sync: false
+#   - key: 9e9ada2298a9af1d6c3ae46dd4f1e613
+#     sync: false
+# - type: web
+  name: line-bot-python-flask-with-handler
   env: python
   repo: https://github.com/line/line-bot-sdk-python.git
-  buildCommand: cd examples/flask-echo;pip install gunicorn -r requirements.txt
-  startCommand: cd examples/flask-echo;gunicorn app:app
+  buildCommand: pip install gunicorn -r requirements.txt
+  startCommand: gunicorn app_with_handler:app
   plan: free
   autoDeploy: false
   envVars:
@@ -12,19 +25,6 @@ services:
     sync: false
   - key: 9e9ada2298a9af1d6c3ae46dd4f1e613
     sync: false
-# - type: web
-#   name: line-bot-python-flask-with-handler
-#   env: python
-#   repo: https://github.com/line/line-bot-sdk-python.git
-#   buildCommand: cd examples/flask-echo;pip install gunicorn -r requirements.txt
-#   startCommand: cd examples/flask-echo;gunicorn app_with_handler:app
-#   plan: free
-#   autoDeploy: false
-#   envVars:
-#   - key: LINE_CHANNEL_ACCESS_TOKEN
-#     sync: false
-#   - key: LINE_CHANNEL_SECRET
-#     sync: false
 # - type: web
 #   name: line-bot-python-flask-kitchensink
 #   env: python
