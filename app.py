@@ -10,14 +10,18 @@ from weather_today import getWeather
 
 app = Flask(__name__)
 
-# Channel Access Token
+# Channel Access Token, Channel Secret
+channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
+channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
+line_bot_api = LineBotApi(channel_access_token)
+handler = WebhookHandler(channel_secret)
 
-line_bot_api = LineBotApi('42oQAgkUxRddwO3bhFSDkFqDNqUTLN/HH+d+BVgfwsI+Dqfc+JpjNgkJ6VyPZl2xhjLZ4o8QkZxw1ckfYF6xTwA4zgFsniAPT3fEH26DgT8Re559X3U4QugahKCl1fsusr8T3zBSz591VLbox0i5OlGUYhWQfeY8sLGRXgo3xvw=')
-# Channel Secret
-handler = WebhookHandler('9e9ada2298a9af1d6c3ae46dd4f1e613')
+# line_bot_api = LineBotApi('42oQAgkUxRddwO3bhFSDkFqDNqUTLN/HH+d+BVgfwsI+Dqfc+JpjNgkJ6VyPZl2xhjLZ4o8QkZxw1ckfYF6xTwA4zgFsniAPT3fEH26DgT8Re559X3U4QugahKCl1fsusr8T3zBSz591VLbox0i5OlGUYhWQfeY8sLGRXgo3xvw=')
+# handler = WebhookHandler('9e9ada2298a9af1d6c3ae46dd4f1e613')
 
 line_bot_api.push_message('U567164f87f856adc5aa8c413efdc8adf',
     TextSendMessage(text='Meow'))
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
