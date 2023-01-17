@@ -24,7 +24,7 @@ line_bot_api.push_message('U567164f87f856adc5aa8c413efdc8adf',
     TextSendMessage(text='Meow'))
 
 # 監聽所有來自 /callback 的 Post Request
-@app.route("/callback", methods=['POST'])
+@app.route("/callback", methods=['POST']) # add "/callback" before Webhook URL in LineDev setting 
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -83,12 +83,20 @@ def handle_message(event):
                 text='請點選住宿日期',
                 actions=[
                     MessageTemplateAction(
-                        label='1/26 ~ 1/29',
-                        text='1/26 ~ 1/29'
+                        label='1/18(三)',
+                        text='1/18(三)'
                     ),
                     MessageTemplateAction(
-                        label='1/29 ~ 1/31',
-                        text='1/29 ~ 1/31'
+                        label='1/19(五)',
+                        text='1/19(五)'
+                    ),
+                    MessageTemplateAction(
+                        label='1/20(六)',
+                        text='1/20(六)'
+                    ),
+                    MessageTemplateAction(
+                        label='1/21~22(日一)',
+                        text='1/21~22(日一)'
                     )
                   ]
                )
@@ -96,38 +104,39 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     
-    if event.message.text=='1/26 ~ 1/29':   
+    if event.message.text=='1/18(三)':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
-                title='飯店資訊',
-                text='請點選身份',
-                actions=[
-                    MessageTemplateAction(
-                        label='月君壧',
-                        text='格蘭德精選水療飯店'
-                    ),
-                    MessageTemplateAction(
-                        label='余家',
-                        text='還劍生態精品飯店'
-                    )
-                  ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    
-    if event.message.text=='1/29 ~ 1/31':   
-        buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template', 
-            template=ButtonsTemplate(
-                thumbnail_image_url = 'https://www.oakwoodasia.com/upload/property/45/1560928731-oakwood-hanoi-lobby-lounge.jpg',
-                title='河內橡木公寓',
-                text='Oakwood Residence Hanoi',
+                thumbnail_image_url = 'https://pix8.agoda.net/hotelImages/400345/-1/85c1e86f7e351aa1bd4362a7ba9f14ae.jpg?ca=18&ce=1&s=1024x768',
+                title='會安海濱水療度假村',
+                text='Bel Marina Hoi An Resort',
                 actions=[
                     MessageTemplateAction(
                         label='地址',
-                        text='河內橡木公寓\n'+'No. 17, Lane 35, Đặng Thai Mai, Quảng An, Tây Hồ, Hà Nội, Việt Nam \n' + 'https://goo.gl/maps/So8J4G6t72Wwupuf7'
+                        text='會安海濱水療度假村\n'+'127 Nguyễn Phúc Tần, Phường Minh An, Hội An, Quảng Nam \n' + 'https://goo.gl/maps/hmAFuceSC6mRKf727'
+                    ),
+                    MessageTemplateAction(
+                        label='電話',
+                        text='+84 236 3966 888'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    
+    if event.message.text=='1/19(五)':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                thumbnail_image_url = 'https://pix8.agoda.net/hotelImages/1985160/-1/b765c9fdc14f30578a7ad8d3db2cae2e.jpg?ca=0&ce=1&s=1024x768', 
+                title='Vinpearl度假村Villa',
+                text='Vinpearl Resort & Spa Đà Nẵng',
+                actions=[
+                    MessageTemplateAction(
+                        label='地址',
+                        text='Vinpearl度假村Villa\n'+'23 Trường Sa, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng, Việt Nam \n' + 'https://goo.gl/maps/WBCF7FzWVmK4XQbz5'
                     ),
                     MessageTemplateAction(
                         label='電話',
@@ -139,51 +148,95 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-    if event.message.text=='格蘭德精選水療飯店':
+    if event.message.text=='1/20(六)':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
-                thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/10556245/-1/b3e1f06089bee881678667839aeef11a.jpg?s=1024x768',
-                title='格蘭德精選水療飯店',
-                text='Grande Collection Hotel & Spa',
+                thumbnail_image_url = 'https://pix8.agoda.net/hotelImages/2613181/-1/d1e55d328306db70d4d728512d3238db.jpg?ca=17&ce=1&s=1024x768',
+                title='峴港君主飯店',
+                text='Monarque Hotel',
                 actions=[
                     MessageTemplateAction(
                         label='地址',
-                        text='格蘭德精選水療飯店\n'+'46-48 Bát Sứ, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/qdGdqaZTAT1WgRHw5'
+                        text='峴港君主飯店\n'+'238 Võ Nguyên Giáp, Phước Mỹ, Sơn Trà, Đà Nẵng, Việt Nam \n' + 'https://goo.gl/maps/bu1RSYi1kCmcJd9w9'
                     ),
                     MessageTemplateAction(
-                        label='聯絡電話',
-                        text='+84 91 819 46 48'
+                        label='電話',
+                        text='+84 236 3588 888'
                     )
                   ]
                )
              )
         line_bot_api.reply_message(event.reply_token, buttons_template)
-        last_sentence.update({'userid': user_id, 'val':'Arban'})
         return 0
 
-    if event.message.text=='還劍生態精品飯店':
+    if event.message.text=='1/21~22(日一)':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
-                thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/8407840/-1/d35ec6f5cf703a04f1dca8473c7b92e9.jpg?s=1024x768',
-                title='還劍生態精品飯店',
-                text='Eco Boutique Hotel Hoan Kiem',
+                thumbnail_image_url = 'https://pix8.agoda.net/hotelImages/6250275/-1/2f7569a08235dbfde10938da8d22c137.jpg?ca=7&ce=1&s=1024x768',
+                title='亞沃拉精品酒店',
+                text='AVORA Boutique Hotel',
                 actions=[
                     MessageTemplateAction(
                         label='地址',
-                        text='還劍生態精品飯店\n'+'5A Cửa Đông, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/8qFktAbHUShevXzb7'
+                        text='亞沃拉精品酒店\n'+'136 Đ. Lê Duẩn, Thạch Thang, Hải Châu, Đà Nẵng, Việt Nam \n' + 'https://goo.gl/maps/gPRwPMwqpQUcX5cf6'
                     ),
                     MessageTemplateAction(
-                        label='聯絡電話',
-                        text='+84 24 3717 3006'
+                        label='電話',
+                        text='+84 236 3538 888'
                     )
                   ]
                )
              )
         line_bot_api.reply_message(event.reply_token, buttons_template)
-        last_sentence.update({'userid': user_id, 'val':'Arban'})
         return 0
+
+    # if event.message.text=='格蘭德精選水療飯店':
+    #     buttons_template = TemplateSendMessage(
+    #         alt_text='Buttons Template', 
+    #         template=ButtonsTemplate(
+    #             thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/10556245/-1/b3e1f06089bee881678667839aeef11a.jpg?s=1024x768',
+    #             title='格蘭德精選水療飯店',
+    #             text='Grande Collection Hotel & Spa',
+    #             actions=[
+    #                 MessageTemplateAction(
+    #                     label='地址',
+    #                     text='格蘭德精選水療飯店\n'+'46-48 Bát Sứ, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/qdGdqaZTAT1WgRHw5'
+    #                 ),
+    #                 MessageTemplateAction(
+    #                     label='聯絡電話',
+    #                     text='+84 91 819 46 48'
+    #                 )
+    #               ]
+    #            )
+    #          )
+    #     line_bot_api.reply_message(event.reply_token, buttons_template)
+    #     last_sentence.update({'userid': user_id, 'val':'Arban'})
+    #     return 0
+
+    # if event.message.text=='還劍生態精品飯店':
+    #     buttons_template = TemplateSendMessage(
+    #         alt_text='Buttons Template', 
+    #         template=ButtonsTemplate(
+    #             thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/8407840/-1/d35ec6f5cf703a04f1dca8473c7b92e9.jpg?s=1024x768',
+    #             title='還劍生態精品飯店',
+    #             text='Eco Boutique Hotel Hoan Kiem',
+    #             actions=[
+    #                 MessageTemplateAction(
+    #                     label='地址',
+    #                     text='還劍生態精品飯店\n'+'5A Cửa Đông, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/8qFktAbHUShevXzb7'
+    #                 ),
+    #                 MessageTemplateAction(
+    #                     label='聯絡電話',
+    #                     text='+84 24 3717 3006'
+    #                 )
+    #               ]
+    #            )
+    #          )
+    #     line_bot_api.reply_message(event.reply_token, buttons_template)
+    #     last_sentence.update({'userid': user_id, 'val':'Arban'})
+    #     return 0
 
     # 旅程資訊
     if event.message.text=='旅遊指南':   
