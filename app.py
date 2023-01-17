@@ -335,35 +335,37 @@ def handle_message(event):
         return 0
 
     if event.message.text=='峴港美食':   
+        message = TextSendMessage(
             text=("""
-                    海州郡 (近大教堂、美奚沙灘中段)\n
-                    Com Nha Linh 越南菜\n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d12882219-Reviews-Com_Nha_Linh_Vietnamese_cuisine-Da_Nang.html\n 
-                    地點: https://goo.gl/maps/dRAayN6DXVhQsXgP6\n\n\n
-                    
-                    五行山郡 (美奚沙灘下半段)\n
-                    Thia Go 越南河粉 \n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d13810289-Reviews-Thia_G_Restaurant_Da_Nang-Da_Nang.html\n 
-                    地點: https://goo.gl/maps/K2Z4W3K78LSyyN7o8 \n\n
+                海州郡 (近大教堂、美奚沙灘中段)\n
+                Com Nha Linh 越南菜\n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d12882219-Reviews-Com_Nha_Linh_Vietnamese_cuisine-Da_Nang.html\n 
+                地點: https://goo.gl/maps/dRAayN6DXVhQsXgP6\n\n\n
+                
+                五行山郡 (美奚沙灘下半段)\n
+                Thia Go 越南河粉 \n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d13810289-Reviews-Thia_G_Restaurant_Da_Nang-Da_Nang.html\n 
+                地點: https://goo.gl/maps/K2Z4W3K78LSyyN7o8 \n\n
 
-                    Bep Cuon Da Nang 越南菜 \n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d17760929-Reviews-Bep_Cuon_Da_Nang-Da_Nang.html\n 
-                    地點: https://goo.gl/maps/NoyB1W1sKAqbC9Sx6\n\n\n
-                    
-                    山茶郡 (美奚上半、近山茶半島)\n
-                    Moc Seafood 海鮮餐廳\n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d16891168-Reviews-Moc_Seafood-Da_Nang.html\n 
-                    地點: https://goo.gl/maps/YpEciq9i5qvAzr8E6'\n\n
+                Bep Cuon Da Nang 越南菜 \n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d17760929-Reviews-Bep_Cuon_Da_Nang-Da_Nang.html\n 
+                地點: https://goo.gl/maps/NoyB1W1sKAqbC9Sx6\n\n\n
+                
+                山茶郡 (美奚上半、近山茶半島)\n
+                Moc Seafood 海鮮餐廳\n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d16891168-Reviews-Moc_Seafood-Da_Nang.html\n 
+                地點: https://goo.gl/maps/YpEciq9i5qvAzr8E6'\n\n
 
-                    Fatfish Restaurant & Lounge Bar 西餐廳\n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d8527479-Reviews-Fatfish_Restaurant_Lounge_Bar-Da_Nang.html\n 
-                    點: https://goo.gl/maps/eU9d6K1mzu7F9NXt8'\n\n
+                Fatfish Restaurant & Lounge Bar 西餐廳\n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d8527479-Reviews-Fatfish_Restaurant_Lounge_Bar-Da_Nang.html\n 
+                點: https://goo.gl/maps/eU9d6K1mzu7F9NXt8'\n\n
 
-                    Sofia Restaurant 越南菜\n 
-                    https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d7906896-Reviews-Sofia_Restaurant-Da_Nang.html\n 
-                    地點: https://goo.gl/maps/uMzXGNEc9iALQn4T6'
-                    """
-                    )
+                Sofia Restaurant 越南菜\n 
+                https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d7906896-Reviews-Sofia_Restaurant-Da_Nang.html\n 
+                地點: https://goo.gl/maps/uMzXGNEc9iALQn4T6'
+                """
+                )
+            )
         line_bot_api.reply_message(event.reply_token, message)
     
 
