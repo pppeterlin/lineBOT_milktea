@@ -8,7 +8,7 @@ def getWeather():
     # 
 
     try:
-        url = "https://api.openweathermap.org/data/2.5/weather?id=1581129&APPID=d36bf1f48799c28847d4b94033fb617d"
+        url = "https://api.openweathermap.org/data/2.5/weather?id=1583992&APPID=d36bf1f48799c28847d4b94033fb617d"
         response = requests.get(url)
         dt = response.json()
         weather['temp_now'] = round(dt['main']['temp']-273.15, 1)
@@ -16,7 +16,7 @@ def getWeather():
         weather['temp_now'] = 0
     
     try:
-        url = "https://api.openweathermap.org/data/2.5/forecast?id=1581129&APPID=d36bf1f48799c28847d4b94033fb617d"
+        url = "https://api.openweathermap.org/data/2.5/forecast?id=1583992&APPID=d36bf1f48799c28847d4b94033fb617d"
         response = requests.get(url)
         dt = response.json()
         
@@ -44,3 +44,5 @@ def getWeather():
 # print('目前河內氣溫為 ' + str(weather['temp_now']) + '°C\n' +
 #                 '12小時氣溫預報: ' +  str(weather['temp_min']) + ' ~ ' + str(weather['temp_max']) + '°C' +
 #                 '，' + weather['desc'])
+if __name__ == '__main__':
+    print(getWeather())

@@ -69,7 +69,7 @@ def handle_message(event):
     if event.message.text=='目前天氣':
         weather = getWeather()
         message = TextSendMessage(
-            text='目前河內氣溫為 ' + str(weather['temp_now']) + '°C\n' +
+            text='目前峴港氣溫為 ' + str(weather['temp_now']) + '°C\n' +
                 '12小時氣溫預報: ' +  str(weather['temp_min']) + ' ~ ' + str(weather['temp_max']) + '°C' +
                 '，' + weather['desc'])
         line_bot_api.reply_message(event.reply_token, message)
@@ -260,42 +260,22 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     
+    # 班機時間
     if event.message.text=='班機時間':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
-                title='班機時間',
-                text='請點選出發地',
-                actions=[
-                    MessageTemplateAction(
-                        label='台灣',
-                        text='台灣出發'
-                    ),
-                    MessageTemplateAction(
-                        label='新加坡（蕙廷）',
-                        text='新加坡出發'
-                    )
-                  ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    
-    if event.message.text=='台灣出發':   
-        buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template', 
-            template=ButtonsTemplate(
-                thumbnail_image_url = 'https://d3jyiu4jpn0ihr.cloudfront.net/wp-content/uploads/sites/6/20190119120151/thumbnail-facebook.jpg',
-                title='越竹航空',
+                thumbnail_image_url = 'https://img.uupon.tw/upload/store/3335b2eb03000002ebcc.png',
+                title='中華航空',
                 text='班機資訊',
                 actions=[
                     MessageTemplateAction(
-                        label='去程：台灣 - 河內',
-                        text='✈️航班 QH511\n 1/26\n 飛行時間：20:55 ~ 23:40\n 航廈：TPE(T1) > HAN(T2)'
+                        label='去程：台灣 - 峴港',
+                        text='✈️航班 CI787\n 1/18\n 飛行時間：07:15 ~ 09:20\n 航廈：TPE(T1) > DAD(T2)'
                     ),
                     MessageTemplateAction(
-                        label='回程：河內 - 台灣',
-                        text='✈️航班 QH510\n 1/31\n 飛行時間：16:10 ~ 20:40\n 航廈：HAN(T2) > TPE(T1)'
+                        label='回程：峴港 - 台灣',
+                        text='✈️航班 CI790\n 1/23\n 飛行時間：17:35 ~ 21:25\n 航廈：DAD(T2) > TPE(T1)'
                     )
                   ]
                )
@@ -303,27 +283,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-    if event.message.text=='新加坡出發':   
-        buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template', 
-            template=ButtonsTemplate(
-                thumbnail_image_url = 'https://www.ourglobetrotters.com/wp-content/uploads/2018/10/FlyScoot-Airline-Review.jpg',
-                title='酷航',
-                text='班機資訊',
-                actions=[
-                    MessageTemplateAction(
-                        label='去程：新加坡 - 河內',
-                        text='✈️航班 VJ916\n 1/27\n 飛行時間：14:55 ~ 17:25\n 航廈：SIN(T4) > HAN(T2)'
-                    ),
-                    MessageTemplateAction(
-                        label='回程：河內 - 新加坡',
-                        text='✈️航班 TR301\n 1/31\n 飛行時間：11:10 ~ 15:45\n 航廈：HAN(T2) > SIN(T1)'
-                    )
-                  ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
+
 
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_imageMessage(event):
