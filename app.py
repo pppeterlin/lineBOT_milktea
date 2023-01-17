@@ -284,7 +284,7 @@ def handle_message(event):
         return 0
 
     # 美食資訊
-    if event.message.text=='美食資訊':   
+    if event.message.text=='餐廳資訊':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
@@ -297,7 +297,7 @@ def handle_message(event):
                     ),
                     MessageTemplateAction(
                         label='會安',
-                        text='會安'
+                        text='會安美食'
                     )
                   ]
                )
@@ -305,7 +305,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-    if event.message.text=='會安':   
+    if event.message.text=='會安美食':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
