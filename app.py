@@ -391,8 +391,8 @@ def handle_message(event):
             - 止痛藥\n thuốc giảm đau (ex：aspirin)\n\n
             - 感冒藥\n thuốc cảm lạnh \n\n
             - 腸胃藥\n thuốc tiêu hóa \n\n
-
             """
+            )
         line_bot_api.reply_message(event.reply_token, message)
 
 
