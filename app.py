@@ -284,35 +284,6 @@ def handle_message(event):
         return 0
 
     # 美食資訊
-    if event.message.text=='會安美食':   
-        buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template', 
-            template=ButtonsTemplate(
-                title='會安地區',
-                text='精選餐廳',
-                actions=[
-                    MessageTemplateAction(
-                        label='QuanCaoLauBaLe 高樓麵',
-                        text='Quan Cao Lau Ba Le高樓麵\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d15016299-Reviews-Quan_Cao_Lau_Ba_Le-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
-                    )
-                    MessageTemplateAction(
-                        label='RedBean 越南菜',
-                        text='Red Bean Restaurant 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d9750905-Reviews-Red_Bean_Restaurant-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/d6v1Zh4brb2cLLKG7'
-                    ),     
-                    MessageTemplateAction(
-                        label="Nhan's kitchen 越南菜",
-                        text="Nhan's kitchen 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/TpMufL1ar2KensWv7"
-                    ),     
-                    MessageTemplateAction(
-                        label='ReachingOut 茶館',
-                        text='Reaching Out Tea House 茶館\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d3844277-Reviews-Reaching_Out_Tea_House-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/HA5ufmG7FrrGBkhM6'
-                    )
-                  ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    
     if event.message.text=='餐廳資訊':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
@@ -333,8 +304,72 @@ def handle_message(event):
              )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
+    
+    if event.message.text=='會安美食':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                title='會安地區',
+                text='精選餐廳',
+                actions=[
+                    MessageTemplateAction(
+                        label='QuanCaoLauBaLe 高樓麵',
+                        text='Quan Cao Lau Ba Le高樓麵\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d15016299-Reviews-Quan_Cao_Lau_Ba_Le-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
+                    ),
+                    MessageTemplateAction(
+                        label='RedBean 越南菜',
+                        text='Red Bean Restaurant 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d9750905-Reviews-Red_Bean_Restaurant-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/d6v1Zh4brb2cLLKG7'
+                    ),     
+                    MessageTemplateAction(
+                        label="Nhan's kitchen 越南菜",
+                        text="Nhan's kitchen 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/TpMufL1ar2KensWv7"
+                    ),     
+                    MessageTemplateAction(
+                        label='ReachingOut 茶館',
+                        text='Reaching Out Tea House 茶館\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d3844277-Reviews-Reaching_Out_Tea_House-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/HA5ufmG7FrrGBkhM6'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
 
-
+    if event.message.text=='峴港美食':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                title='會安地區',
+                text='精選餐廳',
+                actions=[
+                    MessageTemplateAction(
+                        label='ComNhaLinh 越南菜',
+                        text='Com Nha Linh 越南菜 (海州)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d12882219-Reviews-Com_Nha_Linh_Vietnamese_cuisine-Da_Nang.html\n 地點: https://goo.gl/maps/dRAayN6DXVhQsXgP6'
+                    )    
+                    MessageTemplateAction(
+                        label="Thìa Gỗ 越南河粉",
+                        text="Thìa Gỗ 越南河粉 (五行)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d13810289-Reviews-Thia_G_Restaurant_Da_Nang-Da_Nang.html\n 地點: https://goo.gl/maps/K2Z4W3K78LSyyN7o8"
+                    ),     
+                    MessageTemplateAction(
+                        label='BepCuonDaNang 越南菜',
+                        text='Bep Cuon Da Nang 越南菜 (五行)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d17760929-Reviews-Bep_Cuon_Da_Nang-Da_Nang.html\n 地點: https://goo.gl/maps/NoyB1W1sKAqbC9Sx6'
+                    ),
+                    MessageTemplateAction(
+                        label='Moc Seafood 海鮮餐廳',
+                        text='Moc Seafood 海鮮餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d16891168-Reviews-Moc_Seafood-Da_Nang.html\n 地點: https://goo.gl/maps/YpEciq9i5qvAzr8E6'
+                    ),
+                    MessageTemplateAction(
+                        label='Fatfish Restaurant 西餐廳',
+                        text='Fatfish Restaurant & Lounge Bar 西餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d8527479-Reviews-Fatfish_Restaurant_Lounge_Bar-Da_Nang.html\n 地點: https://goo.gl/maps/eU9d6K1mzu7F9NXt8'
+                    ),
+                    MessageTemplateAction(
+                        label='Sofia Restaurant 越南菜',
+                        text='Fatfish Restaurant & Lounge Bar 西餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d7906896-Reviews-Sofia_Restaurant-Da_Nang.html\n 地點: https://goo.gl/maps/uMzXGNEc9iALQn4T6'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
 
 
 @handler.add(MessageEvent, message=ImageMessage)
