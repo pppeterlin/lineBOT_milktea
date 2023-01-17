@@ -284,27 +284,6 @@ def handle_message(event):
         return 0
 
     # 美食資訊
-    if event.message.text=='餐廳資訊':   
-        buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template', 
-            template=ButtonsTemplate(
-                title='精選餐廳',
-                text='請點選地區',
-                actions=[
-                    MessageTemplateAction(
-                        label='峴港',
-                        text='峴港'
-                    ),
-                    MessageTemplateAction(
-                        label='會安',
-                        text='會安美食'
-                    )
-                  ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-
     if event.message.text=='會安美食':   
         buttons_template = TemplateSendMessage(
             alt_text='Buttons Template', 
@@ -333,6 +312,29 @@ def handle_message(event):
              )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
+    
+    if event.message.text=='餐廳資訊':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                title='精選餐廳',
+                text='請點選地區',
+                actions=[
+                    MessageTemplateAction(
+                        label='峴港',
+                        text='峴港美食'
+                    ),
+                    MessageTemplateAction(
+                        label='會安',
+                        text='會安美食'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+
+
 
 
 @handler.add(MessageEvent, message=ImageMessage)
