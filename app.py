@@ -358,12 +358,12 @@ def handle_message(event):
                         text='Moc Seafood 海鮮餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d16891168-Reviews-Moc_Seafood-Da_Nang.html\n 地點: https://goo.gl/maps/YpEciq9i5qvAzr8E6'
                     ),
                     MessageTemplateAction(
-                        label='Fatfish Restaurant 西餐廳',
+                        label='Fatfish 西餐廳',
                         text='Fatfish Restaurant & Lounge Bar 西餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d8527479-Reviews-Fatfish_Restaurant_Lounge_Bar-Da_Nang.html\n 地點: https://goo.gl/maps/eU9d6K1mzu7F9NXt8'
                     ),
                     MessageTemplateAction(
-                        label='Sofia Restaurant 越南菜',
-                        text='Fatfish Restaurant & Lounge Bar 西餐廳 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d7906896-Reviews-Sofia_Restaurant-Da_Nang.html\n 地點: https://goo.gl/maps/uMzXGNEc9iALQn4T6'
+                        label='Sofia 越南菜',
+                        text='Sofia Restaurant 越南菜 (山茶)\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d7906896-Reviews-Sofia_Restaurant-Da_Nang.html\n 地點: https://goo.gl/maps/uMzXGNEc9iALQn4T6'
                     )
                   ]
                )
