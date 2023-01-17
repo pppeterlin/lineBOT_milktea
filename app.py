@@ -289,7 +289,7 @@ def handle_message(event):
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
                 title='會安地區',
-                text='精選餐廳',
+                text='激選餐廳',
                 actions=[
                     MessageTemplateAction(
                         label='Quan Cao Lau Ba Le 高樓麵',
