@@ -289,24 +289,25 @@ def handle_message(event):
             alt_text='Buttons Template', 
             template=ButtonsTemplate(
                 title='會安地區',
-                text='激選餐廳',
+                text='精選餐廳',
                 actions=[
-                    MessageTemplateAction(
-                        label='Quan Cao Lau Ba Le 高樓麵',
-                        text='Quan Cao Lau Ba Le高樓麵\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d15016299-Reviews-Quan_Cao_Lau_Ba_Le-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
-                    ),
-                    MessageTemplateAction(
-                        label='Red Bean Restaurant 越南菜',
-                        text='Red Bean Restaurant 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d9750905-Reviews-Red_Bean_Restaurant-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/d6v1Zh4brb2cLLKG7'
-                    ),     
-                    MessageTemplateAction(
-                        label="Nhan's kitchen 越南菜",
-                        text="Nhan's kitchen 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/TpMufL1ar2KensWv7"
-                    ),     
-                    MessageTemplateAction(
-                        label='Reaching Out Tea House 茶館',
-                        text='Reaching Out Tea House 茶館\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d3844277-Reviews-Reaching_Out_Tea_House-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/HA5ufmG7FrrGBkhM6'
-                    )
+                    MessageTemplateAction(label='test', text='success')
+                    # MessageTemplateAction(
+                    #     label='Quan Cao Lau Ba Le 高樓麵',
+                    #     text='Quan Cao Lau Ba Le高樓麵\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d15016299-Reviews-Quan_Cao_Lau_Ba_Le-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
+                    # ),
+                    # MessageTemplateAction(
+                    #     label='Red Bean Restaurant 越南菜',
+                    #     text='Red Bean Restaurant 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d9750905-Reviews-Red_Bean_Restaurant-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/d6v1Zh4brb2cLLKG7'
+                    # ),     
+                    # MessageTemplateAction(
+                    #     label="Nhan's kitchen 越南菜",
+                    #     text="Nhan's kitchen 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/TpMufL1ar2KensWv7"
+                    # ),     
+                    # MessageTemplateAction(
+                    #     label='Reaching Out Tea House 茶館',
+                    #     text='Reaching Out Tea House 茶館\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d3844277-Reviews-Reaching_Out_Tea_House-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/HA5ufmG7FrrGBkhM6'
+                    # )
                   ]
                )
              )
