@@ -293,7 +293,7 @@ def handle_message(event):
                 actions=[
                     MessageTemplateAction(label='test', text='success'),
                     MessageTemplateAction(
-                        label='Quan Cao Lau Ba Le 高樓麵',
+                        label='QuanCaoLauBaLe 高樓麵',
                         text='Quan Cao Lau Ba Le高樓麵\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
                     )
                     # MessageTemplateAction(
