@@ -344,7 +344,7 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='海州郡 (近大教堂、美奚沙灘中段)',
                         text='Com Nha Linh 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298085-d12882219-Reviews-Com_Nha_Linh_Vietnamese_cuisine-Da_Nang.html\n 地點: https://goo.gl/maps/dRAayN6DXVhQsXgP6'
-                    )  
+                    ),  
                     MessageTemplateAction(
                         label="五行山郡 (美奚沙灘下半段)",
                         text="""
@@ -378,6 +378,22 @@ def handle_message(event):
              )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
+
+    if event.message.text=='簡易用語':
+        message = TextSendMessage(
+            text="""
+            - 哪裡有廁所？\n Nhà vệ sinh ở đâu?（?）\n\n
+            - 我迷路了，我需要你的協助。\n Tôi bị mất. Làm ơn giúp tôi với.\n\n
+            - 你們有什麼招牌菜嗎？\n Nhà hàng có món đặc sản nào không?\n\n
+            - 雞肉\n thịt gà\n\n
+            - 牛肉\n thịt bò\n\n
+            - 魚肉\n thịt cá\n\n
+            - 止痛藥\n thuốc giảm đau (ex：aspirin)\n\n
+            - 感冒藥\n thuốc cảm lạnh \n\n
+            - 腸胃藥\n thuốc tiêu hóa \n\n
+
+            """
+        line_bot_api.reply_message(event.reply_token, message)
 
 
 @handler.add(MessageEvent, message=ImageMessage)
