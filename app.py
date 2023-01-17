@@ -215,28 +215,28 @@ def handle_message(event):
     #     last_sentence.update({'userid': user_id, 'val':'Arban'})
     #     return 0
 
-    # if event.message.text=='還劍生態精品飯店':
-    #     buttons_template = TemplateSendMessage(
-    #         alt_text='Buttons Template', 
-    #         template=ButtonsTemplate(
-    #             thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/8407840/-1/d35ec6f5cf703a04f1dca8473c7b92e9.jpg?s=1024x768',
-    #             title='還劍生態精品飯店',
-    #             text='Eco Boutique Hotel Hoan Kiem',
-    #             actions=[
-    #                 MessageTemplateAction(
-    #                     label='地址',
-    #                     text='還劍生態精品飯店\n'+'5A Cửa Đông, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/8qFktAbHUShevXzb7'
-    #                 ),
-    #                 MessageTemplateAction(
-    #                     label='聯絡電話',
-    #                     text='+84 24 3717 3006'
-    #                 )
-    #               ]
-    #            )
-    #          )
-    #     line_bot_api.reply_message(event.reply_token, buttons_template)
-    #     last_sentence.update({'userid': user_id, 'val':'Arban'})
-    #     return 0
+    if event.message.text=='行程資訊':
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                thumbnail_image_url = 'https://pix10.agoda.net/hotelImages/8407840/-1/d35ec6f5cf703a04f1dca8473c7b92e9.jpg?s=1024x768',
+                title='還劍生態精品飯店',
+                text='Eco Boutique Hotel Hoan Kiem',
+                actions=[
+                    MessageTemplateAction(
+                        label='地址',
+                        text='還劍生態精品飯店\n'+'5A Cửa Đông, Hàng Bồ, Hoàn Kiếm, Hà Nội, Việt Nam \n'+'https://goo.gl/maps/8qFktAbHUShevXzb7'
+                    ),
+                    MessageTemplateAction(
+                        label='聯絡電話',
+                        text='+84 24 3717 3006'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        last_sentence.update({'userid': user_id, 'val':'Arban'})
+        return 0
 
     # 旅程資訊
     if event.message.text=='旅遊指南':   
@@ -283,6 +283,56 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
+    # 美食資訊
+    if event.message.text=='美食資訊':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                title='精選餐廳',
+                text='請點選地區',
+                actions=[
+                    MessageTemplateAction(
+                        label='峴港',
+                        text='峴港'
+                    ),
+                    MessageTemplateAction(
+                        label='會安',
+                        text='會安'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+
+    if event.message.text=='會安':   
+        buttons_template = TemplateSendMessage(
+            alt_text='Buttons Template', 
+            template=ButtonsTemplate(
+                title='會安地區',
+                text='精選餐廳',
+                actions=[
+                    MessageTemplateAction(
+                        label='Quan Cao Lau Ba Le 高樓麵',
+                        text='Quan Cao Lau Ba Le高樓麵\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d15016299-Reviews-Quan_Cao_Lau_Ba_Le-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/ryo4p3S6AiXW5SrE7'
+                    ),
+                    MessageTemplateAction(
+                        label='Red Bean Restaurant 越南菜',
+                        text='Red Bean Restaurant 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d9750905-Reviews-Red_Bean_Restaurant-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/d6v1Zh4brb2cLLKG7'
+                    ),     
+                    MessageTemplateAction(
+                        label="Nhan's kitchen 越南菜",
+                        text="Nhan's kitchen 越南菜\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d12453466-Reviews-Nhan_s_Kitchen-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/TpMufL1ar2KensWv7"
+                    ),     
+                    MessageTemplateAction(
+                        label='Reaching Out Tea House 茶館',
+                        text='Reaching Out Tea House 茶館\n https://www.tripadvisor.com.tw/Restaurant_Review-g298082-d3844277-Reviews-Reaching_Out_Tea_House-Hoi_An_Quang_Nam_Province.html\n 地點: https://goo.gl/maps/HA5ufmG7FrrGBkhM6'
+                    )
+                  ]
+               )
+             )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
 
 
 @handler.add(MessageEvent, message=ImageMessage)
